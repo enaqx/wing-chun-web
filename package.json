@@ -1,0 +1,26 @@
+{
+  "name": "Wing-Chun-site",
+  "description": "Wing-Chun in Odessa City",
+  "version": "1.0.0",
+  "homepage": "http://wing-chun.od.ua/",
+  "repository" : { 
+    "type" : "git",
+    "url" : "http://github.com/enaqx/wing-chun-web"
+  },
+  "license": {
+    "type": "MIT"
+  },
+
+  "scripts": {
+    "start": "node --harmony server.js"
+  },
+
+  "dependencies": {
+    "koa": "*",
+    "koa-static": "*"
+  },
+
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
