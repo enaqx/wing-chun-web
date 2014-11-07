@@ -1,8 +1,18 @@
-var serve = require('koa-static');
-var koa = require('koa');
-var app = koa();
+var Hapi = require('hapi');
+var server = new Hapi.Server(3001);
 
+server.route({
+  method: 'GET',
+  path: '/{param*}',
+  handler: {
+    directory: {
+      path: 'web',
+      listing: true,
+      index: true,
+    }
+  }
+});
 
-app.use(serve(__dirname + '/web'));
-app.listen(3000);
-console.log('listening on port 3000');
+server.start(function () {
+  console.log('Server running at:', server.info.uri);
+});
